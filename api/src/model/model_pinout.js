@@ -19,14 +19,12 @@ class PinOut {
     }
   }
   set(req, res) {
-    
     const pin = req.params.pin;
     const status = req.params.status;
 
     try {
-
-      const gpioPin = new Gpio(pin);
-      gpioPin.writeSync(status)
+      const gpioPin = new Gpio(pin, "out");
+      gpioPin.writeSync(status);
       res.status(201).json({
         pin,
         status,

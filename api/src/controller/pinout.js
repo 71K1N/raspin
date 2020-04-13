@@ -4,8 +4,7 @@ pin = new pinout();
 module.exports.autoroute = {
 
   put: {
-    "/pinout/mode/:pin/:io": mode,
-    "/equipamento/teste": teste
+    "/pinout/mode/:pin/:io": mode,    
   },
   post: {
     "/:pin/:status": set,

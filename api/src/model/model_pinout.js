@@ -19,6 +19,7 @@ class PinOut {
     }
   }
   set(req, res) {
+    
     const pin = req.params.pin;
     const status = req.params.status;
 

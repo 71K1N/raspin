@@ -1,4 +1,4 @@
-sql = require("../libs/conexao");
+//sql = require("../libs/conexao");
 
 class Usuario {
   /**

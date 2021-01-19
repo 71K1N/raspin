@@ -4,7 +4,7 @@
   "description": "Api desenvovlida com Express",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"nodemom server.js "
   },
   "author": "Tikin (Luiz Carlos)",
   "license": "ISC",
@@ -15,7 +15,7 @@
     "mysql2": "^2.1.0",
     "onoff": "^5.0.1",
     "path": "^0.12.7",
-    "pm2": "^4.2.3",
     "winston": "^3.2.1"
   }
 }
+

@@ -18,7 +18,7 @@ function mode(req, res) {
   const io = req.params.mode == "i"?"in":"out";
   const pin = req.params.pin;
 
-  var pin = new Gpio(pin,io);
+  var pinout = new Gpio(pin,io);
 
   res.json({"pin":pin,"mode":io})
 }

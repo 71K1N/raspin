@@ -17,9 +17,9 @@ get:{
 function mode(req, res) {
   const io = req.params.mode == "i"?"in":"out";
   const pin = req.params.pin;
-
-  var pinout = new Gpio(pin,io);
-  global.RASPBERRY[2] =500;
+  
+  global.RASPBERRY[pin] = new Gpio(pin,io);  
+  
   res.json({
     "pin":pin,
     "mode":io,
@@ -31,15 +31,13 @@ function mode(req, res) {
 function set(req, res) {
   const pin = req.params.pin;
   const status = req.params.status;
-
-  // PIN SETTADO COMO SAIDA - CRIAR OBJETO
-  var pinout = new Gpio(pin, 'out');  
-  pinout.writeSync(parseInt(status));      
+ 
+  global.RASPBERRY[pin].writeSync(parseInt(status));      
 
   res.json({
     "pin":pin,
     "state": status,
-    "variavel global":global.RASPBERRY[2]
+    "variavel global":global.RASPBERRY[pin]
   })
 }
 

@@ -1,3 +1,5 @@
+var Gpio = require('onoff').Gpio;
+
 module.exports.autoroute = {
 get:{  
   "/pinout/:pin": status,
@@ -13,7 +15,12 @@ get:{
 };
 
 function mode(req, res) {
-  res.json(req.params)
+  const io = req.params.mode == "i"?"in":"out";
+  const pin = req.params.pin;
+
+  var pin = new Gpio(pin,io);
+
+  res.json({"pin":pin,"mode":io})
 }
 
 function set(req, res) {

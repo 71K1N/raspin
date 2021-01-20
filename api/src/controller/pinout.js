@@ -29,7 +29,7 @@ function set(req, res) {
 
   // PIN SETTADO COMO SAIDA - CRIAR OBJETO
   var pinout = new Gpio(pin, 'out');  
-  pinout.writeSync(1);      
+  pinout.writeSync(parseInt(status));      
 
   res.json({
     "pin":pin,

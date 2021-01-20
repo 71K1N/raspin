@@ -19,8 +19,13 @@ function mode(req, res) {
   const pin = req.params.pin;
 
   var pinout = new Gpio(pin,io);
+  global.RASPBERRY[2] =500;
+  res.json({
+    "pin":pin,
+    "mode":io,
+    "variavel global":global.RASPBERRY[2]
 
-  res.json({"pin":pin,"mode":io})
+  })
 }
 
 function set(req, res) {
@@ -33,7 +38,8 @@ function set(req, res) {
 
   res.json({
     "pin":pin,
-    "state": status
+    "state": status,
+    "variavel global":global.RASPBERRY[2]
   })
 }
 

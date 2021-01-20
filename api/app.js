@@ -6,6 +6,9 @@ const app = express();
 const baseDir = path.join(__dirname, "./src/controller");
 
 app.use(bodyParser.json());
+global.RASPBERRY= [];
+global.RASPBERRY[2]="teste"
+
 autoroute(app, {
   throwErrors: false,
   logger: require("winston"),

@@ -24,7 +24,17 @@ function mode(req, res) {
 }
 
 function set(req, res) {
-  res.json(req.params)
+  const pin = req.params.pin;
+  const status = req.params.status;
+
+  // PIN SETTADO COMO SAIDA - CRIAR OBJETO
+  var pinout = new Gpio(pin, 'out');  
+  LED.writeSync(status);      
+
+  res.json({
+    "pin":pin,
+    "state": status
+  })
 }
 
 function status(req,res) {
